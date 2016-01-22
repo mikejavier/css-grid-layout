@@ -1,0 +1,74 @@
+/* Reset */
+
+*, *:before, *:after{
+	box-sizing: border-box;
+}
+body {  
+  margin: 0 auto;
+  background-color: #f4f4f4;
+}
+nav a {
+	display: block;
+	margin-bottom: .5em;
+}
+
+
+/* Estilizando as areas */
+
+.header { background-color: #0D47A1; padding: 1.2em;}
+.footer { background-color: #2196F3; padding: 1.2em;}
+.sidebar { background-color: #ccc; padding: 1.2em;}
+.main { background-color: #fff; padding: 1.2em;}
+
+
+/* Utilizando CSS Grid Layout */
+
+.wrap {
+	/*
+	*
+	* Definimos nosso wrap para receber o grid;
+	*/
+	display: grid;
+
+
+	/* 
+	*
+	* Será criado um grid de 2x3
+	* 2 colunas: 1º de 200px e a 2º ocupando o restante do espaço
+	*/
+	grid-template-columns: 200px 1fr;
+
+
+	/* 
+	*
+	* 3 filas altura automatica
+	*/
+	grid-template-rows: auto auto auto;
+}
+
+.header,
+.footer {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+.header {
+  grid-row: 1;
+  margin-bottom: 2em;
+}
+
+.footer {
+  grid-row: 3;
+  margin-top: 2em;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 2;
+  margin-right: 2em;
+}
+
+.main {
+  grid-column: 2;
+  grid-row: 2;
+}
